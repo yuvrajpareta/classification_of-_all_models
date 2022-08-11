@@ -1,0 +1,297 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
+
+    <title>Machine Learning Lab</title>
+
+<style>
+
+       .form1 {
+            /* background: #000000; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            flex-direction: column;
+            /* width: 500px; */
+            border-left-width: 250px;
+            border: 2px solid #ccc;
+            /* padding: 30px; */
+            background: #FFAC1C;;
+            /* border-radius: 15px; */
+            /* margin-right: 100px; */
+        }
+
+         .a{
+        color:aqua;
+        background-color: black;
+
+         }
+         body{
+    background-color: #ADD8E6;
+}
+  
+
+</style>
+
+</head>
+
+<body background-color:black>
+    <nav style="width: 100%;" class="navbar navbar-dark bg-secondary">
+         <a class="  navbar-brand" href="#" style="margin-left: 0px; margin-top: 0px; margin-right: 0px; margin-botttom: 0px;">
+             <img style="max-height: auto; width:100%;" src="{{ url_for('static',filename = 'image/PIET logo with tagline.jpg')  }}" 
+             class="img-responsive" style="margin-top:0px;style=width: auto; height: auto; min-width:100%; min-height: auto;">
+              
+              <a href="/aboutusnew" style="color: red; margin-right: 10px;">ABOUT US</a>
+            
+      </div>
+           
+        </a>
+        
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+
+                <img src="https://solutionsreview.com/business-process-management/files/2019/10/Bizagi-Now-Applies-AI-and-Machine-Learning-to-Automated-Processes.jpg")  }}" class="img-fluid"
+                    style="width: auto; height: 200px; min-width: 400px;min-height: 300px;">
+
+            </div>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 " style=" padding: 30px;">
+                <h1  style="color:#033E3E"><B> <i>Summer Internship 2022 Data Preprocessing Project<B><i></h1>
+                <br><br>
+                <p style="font-size:20px;text-align:justify; color: #808000"><i>It is a Internship project developed at Summer internship 2022 at poornima Institute of Engineering & technology, Jaipur.This  Summer Internship 2022 on Artificial intelligence and Data Science was conducted from 27 June 2022 to 14 August 2022</i>  </p>
+              
+                
+                <br><br>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        <div class="a">
+        <marquee behavior="left" direction=""><B>PROJECT 7 MINOR BASED ON CHURNS MODELLING PRDICTION SYSTEM</B></marquee>
+        </div>
+            <div class="col-xs-12 col-md-12">
+                <div class="card mb-3">
+                
+                    <div class="card">
+                        <img style="max-height: 300px;" src='https://ichef.bbci.co.uk/news/976/cpsprodpb/626D/production/_125379152_aigettyimages-1160995648.jpg')  }}"
+                            class="card-img-top" alt="...">
+
+                 
+
+                        <div class="card-body">
+                            <h5 class="card-title"; style="text-align:center">Model Deployment</h5>
+                           
+                            <!-- Main Input For Receiving Query to our ML -->
+   <div class="form1">
+        <form action="{{ url_for('predict')}} "method="get" class="row g-3 my-4">
+
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Credit Score</label>
+                <input type="number" class="form-control" id="creditscore" name="creditscore" step="any" required="required" placeholder="Enter your credit score">
+            </div>
+         <br>
+         <br>
+
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" step="any" required="required" placeholder="Enter your age">
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Tenure</label>
+                <input type="number" class="form-control" id="tenure" name="tenure" step="any" required="required" placeholder="Enter your tenure">
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Balance</label>
+                <input type="number" class="form-control" id="balance" name="balance" step="any" required="required" placeholder="Enter your balance">
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Number of Products</label>
+                <input type="number" class="form-control" id="products" name="products" step="any" required="required" placeholder="Enter the number of products">
+            </div>
+            <br>
+            <br>
+
+
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Estimated Salary</label>
+                <input type="number" class="form-control" id="salary" name="salary" step="any" required="required" placeholder="Enter the estimated salary">
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Has a Credit Card </label>
+                <select id="cr" name ="cr" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Country</label>
+                <select id="con" name ="con" step = "any" class="form-select" required>
+                    <option selected>France</option>
+                    <option>Spain</option>
+                    <option>Germany</option>
+                </select>
+            </div>
+            <br>
+            <br>
+
+            <div class="col-12" style="color: #000;">
+                <label for="floatingInput" class="form-label">Is active member</label>
+                <select id="active" name ="active" step = "any" class="form-select" required>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <br>
+            <br>
+
+            <div class="col-md-4" style="color: #000;">
+                <label for="inputState" class="form-label">Gender</label>
+                <select id="gender" name ="gender" step = "any" class="form-select" required>
+                    <option selected>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+            <br><br>
+
+            <div class="col-md-4" style="color: #000;">
+                <label for="inputState" class="form-label">Choose a Model</label>
+                <select id="Model" name ="Model" step = "any" class="form-select" required>
+                    <option selected>Random Forest Classifier</option>
+                    <option>Decision Tree Classifier</option>
+                    <option>KNN Classifier</option>
+                    <option>SVM Classifier</option>
+                    <option>Naive Bayes Classifier</option>
+                </select>
+            </div>
+            <br>
+            <br>
+
+            <div class="col-12">
+                <button type="submit" value="NB" name="NB" class="btn btn-outline-danger">Submit</button>
+            </div>
+            <br>
+        </form>
+        
+        
+        <p style="color: #FFF;">
+          {{prediction_text}}
+          {{extra_text}}
+        </p>
+
+    </div>
+
+
+                        </div>
+            
+            
+                    </div>
+                </div>
+            </div>
+           
+    <br>
+    
+    <div class="col-md-12">
+              <center><h3 class="section-title" style="text-align: center; color:#AAA;"><u>Sponsored By<u></h3></center>
+            </div>
+          
+          <br>
+          <br>
+    
+      <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <div class="card mb-3">
+            
+                    <div class="card">
+                        <img style="max-height: 200px;" src="{{ url_for('static',filename = 'image/AICTEIdeaLabFooterLogo.png')  }}"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align:center; color:#AAA;">IDEA LAB</h5>
+                            
+                        </div>
+            
+            
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-md-4">
+                <div class="card mb-3">
+            
+                    <div class="card">
+                        <img style="max-height: 200px;" src="{{ url_for('static',filename = 'image/nbanew.png')  }}"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align:center; color:#AAA;">NBA</h5>
+                            
+                        </div>
+            
+            
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xs-10 col-md-3">
+                <div class="card mb-3">
+
+                    <div class="card">
+                        <img style="max-height: 200px;"
+                            src="{{ url_for('static',filename = 'image/aicte-logo.png')  }}"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"; style="text-align:center; color:#AAA;">AICTE MODROB DEEP LEARNING LAB</h5>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        
+               
+    
+    <br><br><br><br><br>
+    <div class="fixed-bottom ">
+        <div class="bg-secondary " style="min-height: 40px;">
+
+            <marquee style="background-color:#000; color:aqua; margin-top: 7px;">
+                <h9>Developed by YUVRAJ PARETA, PIET</h9>
+            </marquee>
+        </div>
+    </div>
+    <!-- change later-->
+    <script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}"></script>
+
+</body>
+
+</html>
