@@ -1,6 +1,6 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from flask_ngrok import run_with_ngrok
+
 import pickle
 
 
@@ -10,7 +10,7 @@ model_DT = pickle.load(open('/content/drive/My Drive/Colab Notebooks/DT_project7
 model_KNN = pickle.load(open('/content/drive/My Drive/Colab Notebooks/KNN_project7minor.pkl','rb'))
 model_SVM = pickle.load(open('/content/drive/My Drive/Colab Notebooks/SVM_project7minor.pkl','rb'))
 model_NB = pickle.load(open('/content/drive/My Drive/Colab Notebooks/NB_project7minor.pkl','rb'))
-run_with_ngrok(app)
+
 
 @app.route('/')
 def home():
