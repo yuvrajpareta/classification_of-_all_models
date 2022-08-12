@@ -1,32 +1,25 @@
+import numpy as np
 from flask import Flask, request, jsonify, render_template
-
+from flask_ngrok import run_with_ngrok
 import pickle
 
 
 app = Flask(__name__)
-
-model_RF=pickle.load(open('RF_Excited.pkl', 'rb')) 
-model_KNN=pickle.load(open('KNN_Excited.pkl', 'rb')) 
-model_K_SVM=pickle.load(open('SVM_K_Excited.pkl', 'rb')) 
-model_DT=pickle.load(open('DT_Excited.pkl', 'rb')) 
-model_NB=pickle.load(open('NB_Excited.pkl', 'rb')) 
-
-
+model_RF = pickle.load(open('/content/drive/My Drive/Colab Notebooks/RF_project-7(minor).pkl','rb'))
+model_DT = pickle.load(open('/content/drive/My Drive/Colab Notebooks/DT_project7minor.pkl','rb'))
+model_KNN = pickle.load(open('/content/drive/My Drive/Colab Notebooks/KNN_project7minor.pkl','rb'))
+model_SVM = pickle.load(open('/content/drive/My Drive/Colab Notebooks/SVM_project7minor.pkl','rb'))
+model_NB = pickle.load(open('/content/drive/My Drive/Colab Notebooks/NB_project7minor.pkl','rb'))
+run_with_ngrok(app)
 
 @app.route('/')
 def home():
   
     return render_template("index.html")
-#------------------------------About us-------------------------------------------
-@app.route('/aboutusnew')
-def aboutusnew():
-    return render_template('aboutusnew.html')
   
 @app.route('/predict',methods=['GET'])
-
 def predict():
     
-     
     cs = int(request.args.get('creditscore'))
     age = int(request.args.get('age'))
     ten = int(request.args.get('tenure'))
@@ -76,23 +69,19 @@ def predict():
       prediction = model_KNN.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
 
     elif Model=="SVM Classifier":
-      prediction = model_K_SVM.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
+      prediction = model_SVM.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
 
     else:
       prediction = model_NB.predict([[cs, con, gen, age, ten, bal, pro, cr, active, sal]])
 
     
-    if prediction == [1]:
+    if prediction == [0]:
       return render_template('index.html', prediction_text='The person exited', extra_text ="-> Prediction by " + Model)
     
     else:
       return render_template('index.html', prediction_text='The person not exited yet', extra_text ="-> Prediction by " + Model)
-   
-  
- 
- if__name__ =="__main__":
-   app.run(debug=True)
- 
 
+if__name__=="__main__":
+  app.run(debug=True)
 
 
