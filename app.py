@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 model_RF=pickle.load(open('RF_Excited.pkl', 'rb')) 
 model_KNN=pickle.load(open('KNN_Excited.pkl', 'rb')) 
-model_K_SVM=pickle.load(open('K_SVM_Excited.pkl', 'rb')) 
+model_K_SVM=pickle.load(open('SVM_K_Excited.pkl', 'rb')) 
 model_DT=pickle.load(open('DT_Excited.pkl', 'rb')) 
 model_NB=pickle.load(open('NB_Excited.pkl', 'rb')) 
 
