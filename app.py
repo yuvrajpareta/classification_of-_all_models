@@ -17,7 +17,7 @@ def home():
   
     return render_template("index.html")
   
-@app.route('/predict',methods=['GET'])
+@app.route('/predict',methods='get')
 def predict():
     
     cs = int(request.args.get('creditscore'))
