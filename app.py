@@ -90,7 +90,7 @@ def predict():
    
   
  
-if__name__=="__main__":
+ if__name__ =="__main__":
    app.run(debug=True)
  
 
